@@ -70,3 +70,20 @@ h. Keep challenge password blank.
 
 i. Keep optional company name blank.
 
+
+
+cd into /etc/httpd/certs directory and run command sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout app01.key -out app01.crt and then pass in the details given above.
+
+a. Country Name = SG
+
+b. State or Province Name = Capital Tower
+
+c. Locality Name = CT
+
+d. Organization Name = KodeKloud
+
+e. Organizational Unit Name = Education
+
+f. Common Name = app01.com
+
+g. Email Address = admin@kodekloud.com
