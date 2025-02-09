@@ -18,12 +18,13 @@ zgrep "31/Jan/2024" access* | cut -f9 -d" " | sort | uniq -c #gives the count of
 654      404
 
 zgrep "31/Jan/2024" access* | cut -f1 -d" " | cut -f2 -d" " | sort | uniq -c #gives count based on incoming ip address
-
+54757534  192.168.0.1
+56476     192.168.0.8
+765       192.168.6.7
 
 
 jq .scripts /opt/the-example-app.nodejs/package.json #to find which is not a script for the nodejs app?
 
+sudo npm dist-tag pm2  #to find the latest version pm2
 
-54757534  192.168.0.1
-56476     192.168.0.8
-765       192.168.6.7
+sudo npm install pm2@latest -g ## pm2 start app.js ## pm2 delete app.js ## pm2 start app.js -i 4 #with 4 forks
