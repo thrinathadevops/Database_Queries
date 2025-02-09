@@ -6,6 +6,13 @@ Useful Commands:-
 
 sudo sed -i 's/8080/5000/g' app.py; python3 app.py #to change the port in a file directly change from 8080 to 5000
 
+sudo sed -i 's/0.0.0.0/127.0.0.1/g;s/8080/5000/g' /opt/simple-webapp-flask/app.py;
+cd /opt/simple-webapp-flask/; nohup python3 app.py &
+sudo sed -i 's/172.16.239.30/0.0.0.0/g' /opt/simple-webapp-flask/app.py; sudo pkill python3; cd /opt/simple-webapp-flask/; nohup python3 app.py &
+curl app01:5000 ; curl 172.16.239.30:5000
+
+
+
 grep "2025/01/31" error.log-20250102 | grep "Worker_connections are not enough" | wc -l #gives the count of event what we provided
 112341 
 zgrep "31/Jan/2024" access* | wc -l #give the count of all connections
@@ -28,3 +35,9 @@ jq .scripts /opt/the-example-app.nodejs/package.json #to find which is not a scr
 sudo npm dist-tag pm2  #to find the latest version pm2
 
 sudo npm install pm2@latest -g ## pm2 start app.js ## pm2 delete app.js ## pm2 start app.js -i 4 #with 4 forks
+
+ip addr show ## 
+
+sudo sed -i 's/8080/9090/g' apache-tomcat-8.5.53/conf/server.xml  
+
+thor@host01 ~$ sudo ./apache-tomcat-8.5.53/bin/startup.sh
