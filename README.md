@@ -41,3 +41,32 @@ ip addr show ##
 sudo sed -i 's/8080/9090/g' apache-tomcat-8.5.53/conf/server.xml  
 
 thor@host01 ~$ sudo ./apache-tomcat-8.5.53/bin/startup.sh
+
+
+
+
+example to create ssl
+sudo openssl req -new -newkey rsa:2048 -nodes -keyout app01.key -out app01.csr
+openssl req  -noout -text -in app01.csr
+
+/etc/httpd/csr/app01.csr (key name should be app01.key). Below are the required details which should be used while creating CSR.
+
+
+a. Country Name = SG
+
+b. State or Province Name = Capital Tower
+
+c. Locality Name = CT
+
+d. Organization Name = KodeKloud
+
+e. Organizational Unit Name = Education
+
+f. Common Name = app01.com
+
+g. Email Address = admin@kodekloud.com
+
+h. Keep challenge password blank.
+
+i. Keep optional company name blank.
+
