@@ -87,3 +87,5 @@ e. Organizational Unit Name = Education
 f. Common Name = app01.com
 
 g. Email Address = admin@kodekloud.com
+
+git log --graph --decorate
