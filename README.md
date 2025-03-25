@@ -89,3 +89,5 @@ f. Common Name = app01.com
 g. Email Address = admin@kodekloud.com
 
 git log --graph --decorate
+
+ps auwx | grep nginx
